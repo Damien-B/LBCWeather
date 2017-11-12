@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  LBCWeather
+
+  Created by Damien Bannerot on 12/11/2017.
+  Copyright © 2017 Damien Bannerot. All rights reserved.
+*/
+
+"FORECAST_LIST_VIEW_TITLE" = "My Places";
+"FORECAST_LIST_VIEW_USER_POSITION_TITLE" = "My position";
+"FORECAST_LIST_VIEW_SAVED_POSITION_TITLE" = "Saved Places";
+
+"FORECAST_DETAIL_VIEW_TEMPERATURE_TITLE" = "Temperature (on 3 hours) :";
+"FORECAST_DETAIL_VIEW_WIND_TITLE" = "Wind :";
+"FORECAST_DETAIL_VIEW_NEBULOSITY_TITLE" = "Cloud cover :";
+"FORECAST_DETAIL_VIEW_RAIN_TITLE" = "Rain :";
+"FORECAST_DETAIL_VIEW_UNKNOWN_CITY_PLACEHOLDER" = "Unknown place";

@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		037981E32EF95CFAB289A867 /* Pods_LBCWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EE2EC663DA076B1BE17BC8 /* Pods_LBCWeather.framework */; };
 		6D6FF0D61FB7D880004E85A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FF0D51FB7D880004E85A5 /* AppDelegate.swift */; };
-		6D6FF0D81FB7D880004E85A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FF0D71FB7D880004E85A5 /* ViewController.swift */; };
 		6D6FF0DB1FB7D880004E85A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6FF0D91FB7D880004E85A5 /* Main.storyboard */; };
 		6D6FF0DE1FB7D880004E85A5 /* LBCWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FF0DC1FB7D880004E85A5 /* LBCWeather.xcdatamodeld */; };
 		6D6FF0E01FB7D880004E85A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6FF0DF1FB7D880004E85A5 /* Assets.xcassets */; };
 		6D6FF0E31FB7D880004E85A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6FF0E11FB7D880004E85A5 /* LaunchScreen.storyboard */; };
 		6D6FF0EE1FB7D881004E85A5 /* LBCWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FF0ED1FB7D881004E85A5 /* LBCWeatherTests.swift */; };
+		6D6FF12B1FB7E4C2004E85A5 /* ForecastListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FF12A1FB7E4C2004E85A5 /* ForecastListTableViewController.swift */; };
+		6D6FF12D1FB7E4E7004E85A5 /* ForecastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FF12C1FB7E4E7004E85A5 /* ForecastDetailViewController.swift */; };
+		6D6FF1301FB7E744004E85A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D6FF1321FB7E744004E85A5 /* Localizable.strings */; };
+		6D6FF1351FB7E79B004E85A5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FF1341FB7E79B004E85A5 /* Utils.swift */; };
+		6D6FF1381FB7E942004E85A5 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FF1371FB7E942004E85A5 /* ForecastTableViewCell.swift */; };
+		6D6FF13A1FB7E954004E85A5 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6FF1391FB7E954004E85A5 /* ActionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +36,6 @@
 		5F6E3FD329C8776C99C4D6B2 /* Pods-LBCWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBCWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBCWeather/Pods-LBCWeather.release.xcconfig"; sourceTree = "<group>"; };
 		6D6FF0D21FB7D880004E85A5 /* LBCWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBCWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6FF0D51FB7D880004E85A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6D6FF0D71FB7D880004E85A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6D6FF0DA1FB7D880004E85A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D6FF0DD1FB7D880004E85A5 /* LBCWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LBCWeather.xcdatamodel; sourceTree = "<group>"; };
 		6D6FF0DF1FB7D880004E85A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +44,13 @@
 		6D6FF0E91FB7D881004E85A5 /* LBCWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LBCWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6FF0ED1FB7D881004E85A5 /* LBCWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCWeatherTests.swift; sourceTree = "<group>"; };
 		6D6FF0EF1FB7D881004E85A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D6FF12A1FB7E4C2004E85A5 /* ForecastListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListTableViewController.swift; sourceTree = "<group>"; };
+		6D6FF12C1FB7E4E7004E85A5 /* ForecastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailViewController.swift; sourceTree = "<group>"; };
+		6D6FF1311FB7E744004E85A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6D6FF1331FB7E757004E85A5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6D6FF1341FB7E79B004E85A5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		6D6FF1371FB7E942004E85A5 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		6D6FF1391FB7E954004E85A5 /* ActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewCell.swift; sourceTree = "<group>"; };
 		E1EE2EC663DA076B1BE17BC8 /* Pods_LBCWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBCWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1789373AEE2D60E23BF5BE1 /* Pods-LBCWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBCWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LBCWeather/Pods-LBCWeather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,13 +105,16 @@
 		6D6FF0D41FB7D880004E85A5 /* LBCWeather */ = {
 			isa = PBXGroup;
 			children = (
+				6D6FF1361FB7E92F004E85A5 /* Cells */,
+				6D6FF1291FB7E488004E85A5 /* Controllers */,
 				6D6FF0D51FB7D880004E85A5 /* AppDelegate.swift */,
-				6D6FF0D71FB7D880004E85A5 /* ViewController.swift */,
 				6D6FF0D91FB7D880004E85A5 /* Main.storyboard */,
 				6D6FF0DF1FB7D880004E85A5 /* Assets.xcassets */,
 				6D6FF0E11FB7D880004E85A5 /* LaunchScreen.storyboard */,
 				6D6FF0E41FB7D880004E85A5 /* Info.plist */,
 				6D6FF0DC1FB7D880004E85A5 /* LBCWeather.xcdatamodeld */,
+				6D6FF1321FB7E744004E85A5 /* Localizable.strings */,
+				6D6FF1341FB7E79B004E85A5 /* Utils.swift */,
 			);
 			path = LBCWeather;
 			sourceTree = "<group>";
@@ -112,6 +126,24 @@
 				6D6FF0EF1FB7D881004E85A5 /* Info.plist */,
 			);
 			path = LBCWeatherTests;
+			sourceTree = "<group>";
+		};
+		6D6FF1291FB7E488004E85A5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D6FF12A1FB7E4C2004E85A5 /* ForecastListTableViewController.swift */,
+				6D6FF12C1FB7E4E7004E85A5 /* ForecastDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6D6FF1361FB7E92F004E85A5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6D6FF1371FB7E942004E85A5 /* ForecastTableViewCell.swift */,
+				6D6FF1391FB7E954004E85A5 /* ActionTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		C0D1B65A2B6F3291E63986DE /* Pods */ = {
@@ -192,6 +224,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 6D6FF0C91FB7D880004E85A5;
 			productRefGroup = 6D6FF0D31FB7D880004E85A5 /* Products */;
@@ -210,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D6FF0E31FB7D880004E85A5 /* LaunchScreen.storyboard in Resources */,
+				6D6FF1301FB7E744004E85A5 /* Localizable.strings in Resources */,
 				6D6FF0E01FB7D880004E85A5 /* Assets.xcassets in Resources */,
 				6D6FF0DB1FB7D880004E85A5 /* Main.storyboard in Resources */,
 			);
@@ -283,8 +317,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6FF0D81FB7D880004E85A5 /* ViewController.swift in Sources */,
+				6D6FF1381FB7E942004E85A5 /* ForecastTableViewCell.swift in Sources */,
+				6D6FF13A1FB7E954004E85A5 /* ActionTableViewCell.swift in Sources */,
+				6D6FF1351FB7E79B004E85A5 /* Utils.swift in Sources */,
 				6D6FF0DE1FB7D880004E85A5 /* LBCWeather.xcdatamodeld in Sources */,
+				6D6FF12B1FB7E4C2004E85A5 /* ForecastListTableViewController.swift in Sources */,
+				6D6FF12D1FB7E4E7004E85A5 /* ForecastDetailViewController.swift in Sources */,
 				6D6FF0D61FB7D880004E85A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +362,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		6D6FF1321FB7E744004E85A5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D6FF1311FB7E744004E85A5 /* en */,
+				6D6FF1331FB7E757004E85A5 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -331,6 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -388,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

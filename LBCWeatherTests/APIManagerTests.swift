@@ -1,5 +1,5 @@
 //
-//  LBCWeatherTests.swift
+//  APIManagerTests.swift
 //  LBCWeatherTests
 //
 //  Created by Damien Bannerot on 12/11/2017.
@@ -7,10 +7,13 @@
 //
 
 import XCTest
+import CoreLocation
 @testable import LBCWeather
 
-class LBCWeatherTests: XCTestCase {
-    
+class APIManagerTests: XCTestCase {
+	
+	private let parisLocation = CLLocation(latitude: 48.8866182, longitude: 2.3357255)
+	
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,16 +24,24 @@ class LBCWeatherTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testAPICall() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+		
+		let APIExpectation = expectation(description: "API call returns under 10 seconds")
+		
+		APIManager.shared.retrieveForecast(forPosition: parisLocation) { (error, forecast) in
+			XCTAssertNotNil(forecast)
+			if let test = forecast {
+				print(test)
+			}
+			APIExpectation.fulfill()
+		}
+		waitForExpectations(timeout: 10) { error in
+			if let error = error {
+				print("Error: \(error.localizedDescription)")
+			}
+		}
     }
     
 }

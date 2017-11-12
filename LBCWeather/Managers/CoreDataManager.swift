@@ -71,7 +71,7 @@ class CoreDataManager: NSObject {
 		return nil
 	}
 	
-	func updateUserLocationForecast(withForecast APIForecast: APIForecast, location: CLLocation) {
+	func updateUserLocationForecast(withForecast APIForecast: APIForecast, location: CLLocation, cityName: String) {
 		let forecastsRequest: NSFetchRequest<Forecast> = Forecast.fetchRequest()
 		forecastsRequest.predicate = NSPredicate(format: "isUserLocation == true")
 		do {
@@ -80,7 +80,7 @@ class CoreDataManager: NSObject {
 				managedObjectContext.delete(forecast)
 			}
 			let entity = NSEntityDescription.entity(forEntityName: "Forecast", in: CoreDataManager.shared.managedObjectContext)!
-			let newUserLocationForecast = Forecast.init(withAPIForecast: APIForecast, position: location, date: Date(), isUserLocation: true, entity: entity, insertInto: CoreDataManager.shared.managedObjectContext)
+			let newUserLocationForecast = Forecast.init(withAPIForecast: APIForecast, cityName: cityName, position: location, date: Date(), isUserLocation: true, entity: entity, insertInto: CoreDataManager.shared.managedObjectContext)
 			try managedObjectContext.save()
 		} catch {
 			print("error fetching forecasts")

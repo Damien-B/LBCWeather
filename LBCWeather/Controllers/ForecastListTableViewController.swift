@@ -7,11 +7,30 @@
 //
 
 import UIKit
+import CoreLocation
+import CoreData
 
 class ForecastListTableViewController: UITableViewController {
 
+	var userLocationForecast: Forecast?
+	var forecasts: [Forecast] = []
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = 100
+		tableView.delegate = self
+		tableView.dataSource = self
+		
+		if let userLocationForecast = CoreDataManager.shared.retrieveUserLocationForecast() {
+			self.userLocationForecast = userLocationForecast
+		} else {
+			getUserLocationForecast()
+		}
+		forecasts = CoreDataManager.shared.retrieveAllSavedForecasts()
+		tableView.reloadData()
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,24 +47,70 @@ class ForecastListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+		return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+		switch section {
+		case 0:
+			return 1
+		case 1:
+			return forecasts.count+1
+		default:
+			return 0
+		}
     }
 
-    /*
+	
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+		switch indexPath.section {
+		case 0:
+			if let forecast = userLocationForecast {
+				if let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastCell", for: indexPath) as? ForecastTableViewCell {
+					cell.cityNameLabel.text = forecast.cityName!
+					cell.temperatureLabel.text = String(format: "%.1f°C", forecast.temperature.toCelsius())
+					return cell
+				}
+			} else {
+				if let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell", for: indexPath) as? ActionTableViewCell {
+					cell.buttonTitle = "FORECAST_LIST_VIEW_USE_LOCATION".localized
+					cell.delegate = self
+					return cell
+				}
+			}
+		case 1:
+			if indexPath.row != forecasts.count {
+				if let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastCell", for: indexPath) as? ForecastTableViewCell {
+					cell.cityNameLabel.text = forecasts[indexPath.row].cityName!
+					cell.temperatureLabel.text = String(format: "%.1f°C", forecasts[indexPath.row].temperature.toCelsius())
+					return cell
+				}
+			} else {
+				if let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell", for: indexPath) as? ActionTableViewCell {
+					cell.buttonTitle = "FORECAST_LIST_VIEW_ADD_LOCATION".localized
+					cell.delegate = self
+					return cell
+				}
+				
+			}
+		default:
+			break
+		}
+		let cell = UITableViewCell()
+		return cell
     }
-    */
+	
+	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		if section == 0 {
+			return "FORECAST_LIST_VIEW_USER_POSITION_TITLE".localized
+		}
+		return "FORECAST_LIST_VIEW_SAVED_POSITION_TITLE".localized
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+		tableView.deselectRow(at: indexPath, animated: false)
+	}
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,4 +157,43 @@ class ForecastListTableViewController: UITableViewController {
     }
     */
 
+}
+
+// MARK: - ActionTableViewCellDelegate
+
+extension ForecastListTableViewController: ActionTableViewCellDelegate {
+	func buttonClicked(atIndexPath indexPath: IndexPath) {
+		switch indexPath.section {
+		case 0:
+			getUserLocationForecast()
+		case 1:
+			// TODO
+			print("TODO")
+		default:
+			break
+		}
+		
+	}
+	
+	
+	
+}
+
+// MARK: - Helpers
+
+extension ForecastListTableViewController {
+	func getUserLocationForecast() {
+		LocationManager.shared.updateUserLocation()
+		if let location = LocationManager.shared.userLocation, let cityName = LocationManager.shared.userLocationCityName {
+			APIManager.shared.retrieveForecast(forPosition: location, completion: { (error, forecast) in
+				if let forecast = forecast {
+					CoreDataManager.shared.updateUserLocationForecast(withForecast: forecast, location: location, cityName: cityName)
+					if let userLocationForecast = CoreDataManager.shared.retrieveUserLocationForecast() {
+						self.userLocationForecast = userLocationForecast
+						self.tableView.reloadData()
+					}
+				}
+			})
+		}
+	}
 }

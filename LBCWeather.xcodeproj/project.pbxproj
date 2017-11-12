@@ -27,6 +27,8 @@
 		6DEF157B1FB8B6D70037E630 /* Forecast+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF15791FB8B6D70037E630 /* Forecast+CoreDataProperties.swift */; };
 		6DEF157D1FB8BBFB0037E630 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF157C1FB8BBFB0037E630 /* CoreDataManager.swift */; };
 		6DEF157F1FB8CDB70037E630 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF157E1FB8CDB70037E630 /* Tests.swift */; };
+		6DEF15811FB8D2D60037E630 /* ForecastSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF15801FB8D2D60037E630 /* ForecastSplitViewController.swift */; };
+		6DEF15831FB8D7E60037E630 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF15821FB8D7E60037E630 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		6DEF15791FB8B6D70037E630 /* Forecast+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Forecast+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6DEF157C1FB8BBFB0037E630 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6DEF157E1FB8CDB70037E630 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		6DEF15801FB8D2D60037E630 /* ForecastSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSplitViewController.swift; sourceTree = "<group>"; };
+		6DEF15821FB8D7E60037E630 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E1EE2EC663DA076B1BE17BC8 /* Pods_LBCWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBCWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1789373AEE2D60E23BF5BE1 /* Pods-LBCWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBCWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LBCWeather/Pods-LBCWeather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +152,7 @@
 		6D6FF1291FB7E488004E85A5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6DEF15801FB8D2D60037E630 /* ForecastSplitViewController.swift */,
 				6D6FF12A1FB7E4C2004E85A5 /* ForecastListTableViewController.swift */,
 				6D6FF12C1FB7E4E7004E85A5 /* ForecastDetailViewController.swift */,
 			);
@@ -168,6 +173,7 @@
 			children = (
 				6D6FF13F1FB7EC93004E85A5 /* APIManager.swift */,
 				6DEF157C1FB8BBFB0037E630 /* CoreDataManager.swift */,
+				6DEF15821FB8D7E60037E630 /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -356,12 +362,14 @@
 			files = (
 				6DEF157A1FB8B6D70037E630 /* Forecast+CoreDataClass.swift in Sources */,
 				6D6FF1401FB7EC93004E85A5 /* APIManager.swift in Sources */,
+				6DEF15831FB8D7E60037E630 /* LocationManager.swift in Sources */,
 				6DEF157B1FB8B6D70037E630 /* Forecast+CoreDataProperties.swift in Sources */,
 				6D6FF1461FB894C9004E85A5 /* APIForecast.swift in Sources */,
 				6D6FF1381FB7E942004E85A5 /* ForecastTableViewCell.swift in Sources */,
 				6D6FF13A1FB7E954004E85A5 /* ActionTableViewCell.swift in Sources */,
 				6DEF157D1FB8BBFB0037E630 /* CoreDataManager.swift in Sources */,
 				6D6FF1351FB7E79B004E85A5 /* Utils.swift in Sources */,
+				6DEF15811FB8D2D60037E630 /* ForecastSplitViewController.swift in Sources */,
 				6D6FF0DE1FB7D880004E85A5 /* LBCWeather.xcdatamodeld in Sources */,
 				6D6FF12B1FB7E4C2004E85A5 /* ForecastListTableViewController.swift in Sources */,
 				6D6FF12D1FB7E4E7004E85A5 /* ForecastDetailViewController.swift in Sources */,

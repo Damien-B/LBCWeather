@@ -32,10 +32,14 @@ class ActionTableViewCell: UITableViewCell {
     }
 
 	@IBAction func buttonClicked(_ sender: UIButton) {
-		delegate.buttonClicked()
+		var tableView = superview!
+		while !tableView.isKind(of: UITableView.self) {
+			tableView = tableView.superview!
+		}
+		delegate.buttonClicked(atIndexPath: (tableView as! UITableView).indexPath(for: self)!)
 	}
 }
 
 protocol ActionTableViewCellDelegate {
-	func buttonClicked()
+	func buttonClicked(atIndexPath indexPath: IndexPath)
 }

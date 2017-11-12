@@ -189,7 +189,7 @@
         <!--Root View Controller-->
         <scene sceneID="BfA-iR-Ttr">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" clearsSelectionOnViewWillAppear="NO" id="eqe-JF-t5v" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" clearsSelectionOnViewWillAppear="NO" id="eqe-JF-t5v" customClass="ForecastListTableViewController" customModule="LBCWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ylx-7R-Ym5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,10 +288,10 @@
             </objects>
             <point key="canvasLocation" x="310" y="-627"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Forecast Split View Controller-->
         <scene sceneID="W5q-lK-KKH">
             <objects>
-                <splitViewController id="br9-sE-LMu" sceneMemberID="viewController">
+                <splitViewController id="br9-sE-LMu" customClass="ForecastSplitViewController" customModule="LBCWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="qwR-jD-jdr" kind="relationship" relationship="masterViewController" id="dxR-8W-2Ic"/>
                         <segue destination="rBV-i8-zi4" kind="relationship" relationship="detailViewController" id="aHb-gB-D3C"/>

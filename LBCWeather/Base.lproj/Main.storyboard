@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Forecast Detail View Controller-->
         <scene sceneID="uex-7N-FcB">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rBV-i8-zi4" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rBV-i8-zi4" customClass="ForecastDetailViewController" customModule="LBCWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BJA-s1-kPv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,19 +22,10 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8l-K1-pzq">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="352.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="353"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-da-F65">
-                                                <rect key="frame" x="8" y="18" width="398" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                                </variation>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPS Position" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J08-zL-rOu">
-                                                <rect key="frame" x="8" y="46" width="398" height="18"/>
+                                                <rect key="frame" x="8" y="46.333333333333329" width="398" height="18"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -43,7 +34,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Température (sur 3 heures) :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOp-3o-NNh">
-                                                <rect key="frame" x="8" y="94" width="398" height="14.333333333333329"/>
+                                                <rect key="frame" x="8" y="94.333333333333343" width="398" height="14.333333333333329"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -52,7 +43,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX °C" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyZ-Ph-hqN">
-                                                <rect key="frame" x="8" y="108.33333333333334" width="398" height="20.333333333333343"/>
+                                                <rect key="frame" x="8" y="108.66666666666666" width="398" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -60,8 +51,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vent" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TD9-XD-9RN">
-                                                <rect key="frame" x="8" y="158.66666666666666" width="398" height="14.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vent :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TD9-XD-9RN">
+                                                <rect key="frame" x="8" y="159" width="398" height="15"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -70,7 +61,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX Km/h" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ack-bE-Jy2">
-                                                <rect key="frame" x="8" y="173" width="398" height="20.333333333333343"/>
+                                                <rect key="frame" x="8" y="173.33333333333334" width="398" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -78,8 +69,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Couverture nuageuse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-pE-ueh">
-                                                <rect key="frame" x="8" y="223.33333333333331" width="398" height="14.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Couverture nuageuse :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qk-pE-ueh">
+                                                <rect key="frame" x="8" y="223.66666666666669" width="398" height="15"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -87,8 +78,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX Km/h" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3l-UX-taj">
-                                                <rect key="frame" x="8" y="237.66666666666669" width="398" height="20.333333333333314"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX %" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3l-UX-taj">
+                                                <rect key="frame" x="8" y="238" width="398" height="21"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -97,7 +88,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pluie :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHN-uW-bBR">
-                                                <rect key="frame" x="8" y="288" width="398" height="14.333333333333314"/>
+                                                <rect key="frame" x="8" y="288.33333333333331" width="398" height="14.333333333333314"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -106,12 +97,21 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX mm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePt-2g-89s">
-                                                <rect key="frame" x="8" y="302.33333333333331" width="398" height="20.333333333333314"/>
+                                                <rect key="frame" x="8" y="302.66666666666669" width="398" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-da-F65">
+                                                <rect key="frame" x="8" y="18" width="398" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                 </variation>
                                             </label>
                                         </subviews>
@@ -169,6 +169,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nfV-jI-NIy"/>
                     </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="bHW-da-F65" id="EgF-ao-0qf"/>
+                        <outlet property="gpsPositionLabel" destination="J08-zL-rOu" id="7VF-bd-8dl"/>
+                        <outlet property="nebulosityDataLabel" destination="s3l-UX-taj" id="ACc-vI-Imc"/>
+                        <outlet property="nebulosityTitleLabel" destination="1qk-pE-ueh" id="qiM-tB-0dP"/>
+                        <outlet property="rainDataLabel" destination="ePt-2g-89s" id="NPq-Uh-Des"/>
+                        <outlet property="rainTitleLabel" destination="hHN-uW-bBR" id="xdh-e4-oO6"/>
+                        <outlet property="temperatureDataLabel" destination="eyZ-Ph-hqN" id="Fl8-uI-9gJ"/>
+                        <outlet property="temperatureTitleLabel" destination="rOp-3o-NNh" id="t2A-Ff-Egc"/>
+                        <outlet property="windDataLabel" destination="ack-bE-Jy2" id="zZs-c7-Brk"/>
+                        <outlet property="windTitleLabel" destination="TD9-XD-9RN" id="hva-LD-KFe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghL-uw-gkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,7 +195,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" rowHeight="139" id="bDW-TH-SJ6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" rowHeight="139" id="bDW-TH-SJ6" customClass="ForecastTableViewCell" customModule="LBCWeather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="139"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDW-TH-SJ6" id="JZE-uf-5cU">
@@ -213,8 +225,12 @@
                                         <constraint firstAttribute="bottom" secondItem="6uf-n8-ecz" secondAttribute="bottom" constant="10" id="uBx-8Q-2u2"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityNameLabel" destination="6uf-n8-ecz" id="bGw-Tc-Abk"/>
+                                    <outlet property="temperatureLabel" destination="V6C-41-KHv" id="3FO-5a-hcL"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonCell" id="Bfk-rM-IvD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonCell" id="Bfk-rM-IvD" customClass="ActionTableViewCell" customModule="LBCWeather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="167" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bfk-rM-IvD" id="KoP-ef-0dL">
@@ -228,6 +244,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="buttonClicked:" destination="Bfk-rM-IvD" eventType="touchUpInside" id="3xt-3Z-rVS"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -237,6 +256,9 @@
                                         <constraint firstAttribute="bottom" secondItem="Pw1-ZG-uGK" secondAttribute="bottom" id="U6b-TS-Qzf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="actionButton" destination="Pw1-ZG-uGK" id="Vf0-vR-XAB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

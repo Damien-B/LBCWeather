@@ -83,7 +83,17 @@ class CoreDataManager: NSObject {
 			let newUserLocationForecast = Forecast.init(withAPIForecast: APIForecast, cityName: cityName, position: location, date: Date(), isUserLocation: true, entity: entity, insertInto: CoreDataManager.shared.managedObjectContext)
 			try managedObjectContext.save()
 		} catch {
-			print("error fetching forecasts")
+			print("error saving forecast")
+		}
+	}
+	
+	func saveForecast(withForecast APIForecast: APIForecast, location: CLLocation, cityName: String) {
+		do {
+			let entity = NSEntityDescription.entity(forEntityName: "Forecast", in: CoreDataManager.shared.managedObjectContext)!
+			let newForecast = Forecast.init(withAPIForecast: APIForecast, cityName: cityName, position: location, date: Date(), isUserLocation: false, entity: entity, insertInto: CoreDataManager.shared.managedObjectContext)
+			try managedObjectContext.save()
+		} catch {
+			print("error saving forecast")
 		}
 	}
 	

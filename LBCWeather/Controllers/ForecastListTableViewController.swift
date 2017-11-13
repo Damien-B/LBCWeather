@@ -19,6 +19,7 @@ class ForecastListTableViewController: UITableViewController {
 	var userLocationForecast: Forecast?
 	var forecasts: [Forecast] = []
 	var splitViewDelegate: SplitViewDelegate?
+	var newForecastText: String?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,9 +177,38 @@ extension ForecastListTableViewController: ActionTableViewCellDelegate {
 		case 0:
 			getUserLocationForecast()
 		case 1:
-			// TODO
-			print("TODO")
 			
+			var TF: UITextField?
+			// Create the AlertController
+			let actionSheetController: UIAlertController = UIAlertController(title: "Ajouter une ville", message: "", preferredStyle: .alert)
+			
+			// Create and add the Cancel action
+			let cancelAction: UIAlertAction = UIAlertAction(title: "Annuler", style: .cancel) { action -> Void in
+				actionSheetController.dismiss(animated: true, completion: nil)
+			}
+			let nextAction: UIAlertAction = UIAlertAction(title: "OK", style: .default) { action -> Void in
+				self.newForecastText = TF!.text!
+				LocationManager.shared.location(fromAddress: self.newForecastText!, completion: { (location) in
+					if let location = location {
+						APIManager.shared.retrieveForecast(forPosition: location, completion: { (error, forecast) in
+							if let forecast = forecast {
+								CoreDataManager.shared.saveForecast(withForecast: forecast, location: location, cityName: self.newForecastText!)
+								self.forecasts = CoreDataManager.shared.retrieveAllSavedForecasts()
+								self.tableView.reloadData()
+							}
+						})
+					}
+				})
+			}
+			actionSheetController.addAction(cancelAction)
+			actionSheetController.addAction(nextAction)
+			// add a textfield
+			actionSheetController.addTextField(configurationHandler: { (textField) in
+				TF = textField
+			})
+			
+			//Present the AlertController
+			self.present(actionSheetController, animated: true, completion: nil)
 		default:
 			break
 		}

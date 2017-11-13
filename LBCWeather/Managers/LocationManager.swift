@@ -32,6 +32,18 @@ class LocationManager: NSObject {
 		}
 	}
 	
+	func location(fromAddress address: String, completion: @escaping (CLLocation?) -> Void) {
+		let geoCoder = CLGeocoder()
+		geoCoder.geocodeAddressString(address, in: nil, preferredLocale: Locale.current) { (placemarks, error) in
+			if let placemarks = placemarks {
+				if let place = placemarks.first, let location = place.location {
+					completion(location)
+				}
+			}
+			completion(nil)
+		}
+	}
+	
 }
 
 

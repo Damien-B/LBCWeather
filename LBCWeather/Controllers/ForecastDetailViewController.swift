@@ -50,6 +50,7 @@ class ForecastDetailViewController: UIViewController {
 			windDataLabel.text = String(format: "%.1f Km/h", forecast.wind)
 			nebulosityDataLabel.text = "\(Int(forecast.nebulosity))%"
 			rainDataLabel.text = String(format: "%.1fmm", forecast.rain)
+			title = forecast.cityName
 		}
 	}
 	

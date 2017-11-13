@@ -23,11 +23,13 @@ class ForecastListTableViewController: UITableViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		// self-sizing cells
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 100
+		
 		tableView.delegate = self
 		tableView.dataSource = self
+		title = "LBC Weather"
 		
 		if let userLocationForecast = CoreDataManager.shared.retrieveUserLocationForecast() {
 			self.userLocationForecast = userLocationForecast

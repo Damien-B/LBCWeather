@@ -15,6 +15,7 @@ class ForecastSplitViewController: UISplitViewController, UISplitViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.delegate = self
+		self.preferredDisplayMode = .allVisible
 		if let leftNavController = self.viewControllers.first as? UINavigationController, let masterViewController = leftNavController.topViewController as? ForecastListTableViewController {
 			masterViewController.splitViewDelegate = self
 		}

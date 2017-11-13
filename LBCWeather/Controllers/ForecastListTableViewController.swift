@@ -10,10 +10,15 @@ import UIKit
 import CoreLocation
 import CoreData
 
+protocol SplitViewDelegate {
+	func showDetailView(withForecast: Forecast)
+}
+
 class ForecastListTableViewController: UITableViewController {
 
 	var userLocationForecast: Forecast?
 	var forecasts: [Forecast] = []
+	var splitViewDelegate: SplitViewDelegate?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,7 +113,11 @@ class ForecastListTableViewController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		
+		if tableView.cellForRow(at: indexPath)!.isKind(of: ForecastTableViewCell.self) {
+			if let delegate = splitViewDelegate {
+				delegate.showDetailView(withForecast: indexPath.section == 0 ? userLocationForecast! : forecasts[indexPath.row])
+			}
+		}
 		tableView.deselectRow(at: indexPath, animated: false)
 	}
 
@@ -169,6 +178,7 @@ extension ForecastListTableViewController: ActionTableViewCellDelegate {
 		case 1:
 			// TODO
 			print("TODO")
+			
 		default:
 			break
 		}
@@ -197,3 +207,4 @@ extension ForecastListTableViewController {
 		}
 	}
 }
+

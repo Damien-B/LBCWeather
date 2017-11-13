@@ -13,7 +13,7 @@
         <!--Forecast Detail View Controller-->
         <scene sceneID="uex-7N-FcB">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rBV-i8-zi4" customClass="ForecastDetailViewController" customModule="LBCWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForecastDetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="rBV-i8-zi4" customClass="ForecastDetailViewController" customModule="LBCWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BJA-s1-kPv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

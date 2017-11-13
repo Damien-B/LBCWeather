@@ -18,13 +18,14 @@ extension Forecast {
     }
 
     @NSManaged public var cityName: String?
+    @NSManaged public var date: NSDate?
+    @NSManaged public var isUserLocation: Bool
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
     @NSManaged public var nebulosity: Int16
     @NSManaged public var temperature: Float
     @NSManaged public var wind: Float
     @NSManaged public var windDirection: Int16
-    @NSManaged public var date: NSDate?
-    @NSManaged public var isUserLocation: Bool
+    @NSManaged public var rain: Float
 
 }

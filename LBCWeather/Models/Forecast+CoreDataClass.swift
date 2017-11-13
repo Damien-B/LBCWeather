@@ -25,6 +25,7 @@ public class Forecast: NSManagedObject {
 		wind = forecast.wind
 		windDirection = Int16(forecast.windDirection)
 		nebulosity = Int16(forecast.nebulosity)
+		rain = forecast.rain
 		self.date = date as NSDate
 		self.isUserLocation = isUserLocation
 		do {

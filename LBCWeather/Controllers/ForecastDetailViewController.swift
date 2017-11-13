@@ -24,6 +24,8 @@ class ForecastDetailViewController: UIViewController {
 	@IBOutlet weak var nebulosityDataLabel: UILabel!
 	@IBOutlet weak var rainDataLabel: UILabel!
 	
+	var forecast: Forecast?
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		updateUI()
@@ -41,6 +43,14 @@ class ForecastDetailViewController: UIViewController {
 		windTitleLabel.text = "FORECAST_DETAIL_VIEW_WIND_TITLE".localized
 		nebulosityTitleLabel.text = "FORECAST_DETAIL_VIEW_NEBULOSITY_TITLE".localized
 		rainTitleLabel.text = "FORECAST_DETAIL_VIEW_RAIN_TITLE".localized
+		if let forecast = forecast {
+			cityNameLabel.text = forecast.cityName
+			gpsPositionLabel.text = "\(String(format: "%.5f",forecast.latitude)), \(String(format: "%.5f", forecast.longitude))"
+			temperatureDataLabel.text = String(format: "%.1f°C", forecast.temperature.toCelsius())
+			windDataLabel.text = String(format: "%.1f Km/h", forecast.wind)
+			nebulosityDataLabel.text = "\(Int(forecast.nebulosity))%"
+			rainDataLabel.text = String(format: "%.1fmm", forecast.rain)
+		}
 	}
 	
 

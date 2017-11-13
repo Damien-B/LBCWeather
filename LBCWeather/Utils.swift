@@ -9,9 +9,19 @@
 import Foundation
 
 
+
+ let userLocationKey = "UserLocation"
+ let userLocationCityNameKey = "UserLocationCityName"
+
 extension String {
 	var localized: String {
 		return NSLocalizedString(self, comment: "")
+	}
+	
+	func toDate() -> Date? {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+		return formatter.date(from: self)
 	}
 }
 
@@ -37,10 +47,8 @@ extension Date {
 	}
 }
 
-extension String {
-	func toDate() -> Date? {
-		let formatter = DateFormatter()
-		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-		return formatter.date(from: self)
+extension Float {
+	func toCelsius() -> Float {
+		return self-273.15
 	}
 }
